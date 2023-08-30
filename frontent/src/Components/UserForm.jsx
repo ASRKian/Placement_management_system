@@ -120,7 +120,7 @@ export default function UserForm({ _id, name, email, mobile, cgpa, resume, depar
     }
 
     return (
-        <div className={`col-md-11 m-5 shadow-lg p-3 mb-4 rounded`} style={{ height: "37vh" }} >
+        <div className={`col-md-11 m-5 shadow-lg p-3 mb-4 rounded`} style={{ minHeight: "37vh" }} >
             {isLoading ? <div className="spinner"></div> : <>
                 <h4>Name: <span className="fs-5">{name}</span></h4>
                 <h4>Email: <span className="fs-5">{email}</span></h4>

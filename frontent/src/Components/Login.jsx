@@ -54,8 +54,6 @@ export const Login = () => {
                     progress: undefined,
                     theme: "dark",
                 });
-                navigate('/forms')
-                console.log(res);
             }
             action.resetForm()
         }
