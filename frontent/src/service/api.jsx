@@ -35,8 +35,47 @@ export const resumeAPI = createApi({
                     }
                 }
             }
+        }),
+        sendEmail: builder.mutation({
+            query: ({ email, token }) => {
+                return {
+                    url: "/send-mail",
+                    method: "POST",
+                    body: { "email": email },
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                        'Content-type': 'application/json'
+                    }
+                }
+            }
+        }),
+        updateForm: builder.mutation({
+            query: ({ _id, token }) => {
+                return {
+                    url: '/setSelection',
+                    method: 'PATCH',
+                    body: { "id": _id },
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                        'Content-type': 'application/json'
+                    }
+                }
+            }
+        }),
+        deleteForm: builder.mutation({
+            query: ({ _id, token }) => {
+                return {
+                    url: '/deleteForm',
+                    method: 'DELETE',
+                    body: { "id": _id },
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                        'Content-type': 'application/json'
+                    }
+                }
+            }
         })
     }),
 })
 
-export const { useSubmitFormMutation, useLoginMutation, useGetFormsMutation } = resumeAPI
+export const { useSubmitFormMutation, useLoginMutation, useGetFormsMutation, useSendEmailMutation, useUpdateFormMutation, useDeleteFormMutation } = resumeAPI

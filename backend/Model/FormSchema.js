@@ -25,6 +25,10 @@ const UserFormSchema = new mongoose.Schema({
     department: {
         type: String,
         required: true
+    },
+    selected: {
+        type: Boolean,
+        default: false
     }
 }, {
     timestamps : true

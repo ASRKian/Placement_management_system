@@ -3,7 +3,7 @@ import env from 'dotenv'
 
 env.config()
 
-const uri = `mongodb+srv://${process.env.ID}:${process.env.PASSWORD}@cluster1.wonlygv.mongodb.net/UserForm?retryWrites=true&w=majority`
+const uri = process.env.URI
 
 const Connection = async () => {
     try {

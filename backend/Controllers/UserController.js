@@ -78,8 +78,7 @@ class UserController {
         res.send({ "status": "failed", "message": "All Fields are Required" })
       }
     } catch (error) {
-      console.log(error)
-      res.send({ "status": "failed", "message": "Unable to Login" })
+      res.send({ "status": "failed", "message": error.message })
     }
   }
 
@@ -140,8 +139,7 @@ class UserController {
         res.send({ "status": "failed", "message": "All Fields are Required" })
       }
     } catch (error) {
-      console.log(error)
-      res.send({ "status": "failed", "message": "Invalid Token" })
+      res.send({ "status": "failed", "message": error.message })
     }
   }
 }
